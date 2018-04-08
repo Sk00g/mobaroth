@@ -1,12 +1,15 @@
 <html>
 <canvas id="ctx" width="700" height="600"></canvas>
 
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="module">
     import * as constants from './client/js/constants.js';
     import * as phys from './client/js/physics.js';
     import { ball, bat } from './client/js/entity.js';
 
     console.log("executing main.js code");
+
+    var socket = io();
 
     function timestamp() {
         return window.performance && window.performance.now ? window.performance.now() : new Date().getTime();
